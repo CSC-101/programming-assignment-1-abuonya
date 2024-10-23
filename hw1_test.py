@@ -184,7 +184,9 @@ class TestCases(unittest.TestCase):
 
     # Part 6
     def test_books_by_author1(self):
-        book_list = ([Book("Andy Weir", "The Martian")])
+        book1 = (Book("Andy Weir", "The Martian"))
+        book2 = (Book("Toni Morrison", "A Mercy"))
+        book_list = [book1, book2]
         input = "Andy Weir"
         result = hw1.books_by_author(input, book_list)
         expected = ["The Martian"]

@@ -1,5 +1,5 @@
 from types import NoneType
-
+import math
 import data
 # Abbreviated representation of an employee.
 class Employee:
@@ -27,34 +27,6 @@ class Employee:
                 type(other) == Employee and
                 self.name == other.name and
                 self.pay_rate == other.pay_rate)
-
-
-# Representation of a circle.
-class Circle:
-    # Initialize a new Circle object.
-    # input: center as a Point
-    # input: radius as a float
-    def __init__(self, center: Point, radius: float):
-        self.center = center
-        self.radius = radius
-
-
-    # Provide a developer-friendly string representation of the object.
-    # input: Circle for which a string representation is desired.
-    # output: string representation
-    def __repr__(self) -> str:
-        return 'Circle({}, {})'.format(self.center, self.radius)
-
-
-    # Compare the Circle object with another value to determine equality.
-    # input: Circle against which to compare
-    # input: Another value to compare to the Circle
-    # output: boolean indicating equality
-    def __eq__(self, other) -> bool:
-        return (other is self or
-                type(other) == Circle and
-                self.center == other.center and
-                math.isclose(self.radius, oth
 
 # Representation of a book.
 class Book:
@@ -273,9 +245,9 @@ def books_by_author(name: str, books: list[Book]) -> list[str]:
     # Example Input: , Output Given the Input :
     # Name of function: circle_bound
     # Me if I was a computer: i'd first calculate the center of the rectangle, and uhmmmmm
-def circle_bound(points: Rectangle) -> Circle:
-    calculate_x_center = points.top_left[0] - points.bottom_right[0] / 2 # find coordinate "x" for center point of rectangle
-    calculate_y_center = points.top_left[1] - points.top_left[1] / 2 # find coordinate "y" for center point of rectangle
+# def circle_bound(points: Rectangle) -> Circle:
+    # calculate_x_center = points.top_left[0] - points.bottom_right[0] / 2 # find coordinate "x" for center point of rectangle
+   #  calculate_y_center = points.top_left[1] - points.top_left[1] / 2 # find coordinate "y" for center point of rectangle
 
 
 # Part 8
@@ -287,13 +259,25 @@ def circle_bound(points: Rectangle) -> Circle:
     # Me if I was a computer: first, i'd get a list of all the employees. Go through the list to find all their pay, then take the average of all those numbers.
     # Then, I'd take the same list of employees and filter out if an employee's pay is less than the average pay, appending that employee's name to a new list.
 
-def below_pay_average(employee: list[Employee]) -> list[str]:
-    #first compute average pay...
+def below_pay_average(allemployees: list[Employee]) -> list[str]:
+    #first find total pay...
+    underpaid_list = []
     total_employee_pay = 0
-    count = 0
-    for x.pay_rate in employee:
-        total_employee_pay = employee.pay_rate
+    count = 0 # for how many employees there are --> to divide by total sum of pay
+    for employee in allemployees:
+        total_employee_pay += employee.pay_rate
         count += 1
+    # compute average pay...
+    average_pay = total_employee_pay / count
+    print(average_pay)
+
+    # create list of employees that are underpaid
+    for employee in allemployees:
+        if employee.pay_rate < average_pay:
+            underpaid_list.append(employee.name)
+    else:
+        print(underpaid_list)
+        return underpaid_list
 
 
 

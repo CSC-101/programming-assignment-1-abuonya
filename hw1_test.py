@@ -21,9 +21,8 @@ class TestCases(unittest.TestCase):
         expected = 3
         self.assertEqual(expected, result)
 
-
-
     # Part 2
+    def test
 
 
     # Part 3

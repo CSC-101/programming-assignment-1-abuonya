@@ -31,11 +31,17 @@ def vowel_count(word: str) -> int:
 # DESIGN RECIPE...
     # Purpose: This function takes a nested list and returns a new list containing the elements of the input list that are of length 2.
     # Input: list[list[int]] , Output: list[int]
-    # Example Input:  [[1,23,4], [5,6], [78]] , Output Given the Input : [[23], [78]]
+    # Example Input:  [[1,23,4], [5,6], [78]] , Output Given the Input : [[5,6]]
     # Name of function: short_lists
-    # Me if I was a computer: dslfjsldkjfsakf
-def short_lists(x: list[list[int]]) -> list[int]:
-
+    # Me if I was a computer: take list, use a list comphrension to filter the length of each nested list, and if its length == 2, append that list into a new list.
+def short_lists(meow: list[list[int]]) -> list[list[int]]:
+    newList = []
+    for x in meow:
+        if len(x) == 2:
+            newList.append(x)
+    else:
+        print(newList)
+        return newList
 
 # Part 3
 

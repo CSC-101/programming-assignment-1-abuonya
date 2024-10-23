@@ -2,6 +2,33 @@ from types import NoneType
 
 import data
 
+# Representation of a circle.
+class Circle:
+    # Initialize a new Circle object.
+    # input: center as a Point
+    # input: radius as a float
+    def __init__(self, center: Point, radius: float):
+        self.center = center
+        self.radius = radius
+
+
+    # Provide a developer-friendly string representation of the object.
+    # input: Circle for which a string representation is desired.
+    # output: string representation
+    def __repr__(self) -> str:
+        return 'Circle({}, {})'.format(self.center, self.radius)
+
+
+    # Compare the Circle object with another value to determine equality.
+    # input: Circle against which to compare
+    # input: Another value to compare to the Circle
+    # output: boolean indicating equality
+    def __eq__(self, other) -> bool:
+        return (other is self or
+                type(other) == Circle and
+                self.center == other.center and
+                math.isclose(self.radius, oth
+
 # Representation of a book.
 class Book:
     # Initialize a new Book object.
@@ -200,7 +227,7 @@ def rectangle_area(x: Rectangle) -> float:
 # DESIGN RECIPE...
     # Purpose: This function takes two parameters of type string and list[Book], returning a list of all books written by the author inputted.
     # Input: str, list[str] , Output: list[str]
-    # Example Input:  ("Andy Weir", Book_List) , Output Given the Input : [["The Martian by Andy Weir"]]
+    # Example Input:  ("Andy Weir", Book_List) , Output Given the Input : ["The Martian"]
     # Name of function: books_by_author
     # Me if I was a computer: first, i'd create a list of books with authors so I have a list to reference from. Then, I'll filter through the list
     # by each element to see if it matches the inputted author's name. If a result matches, append that element to a new list that contains all books that have that authors' name.
@@ -213,7 +240,15 @@ def books_by_author(name: str, books: list[Book]) -> list[str]:
     else:
         return book_list
 # Part 7
-def circle_bound(x: rectangle)
+# DESIGN RECIPE...
+    # Purpose: This function takes a parameter of class Rectangle, returning a Circle (another class object) which is a circle that encloses the rectangle.
+    # Input: float Output: float
+    # Example Input: , Output Given the Input :
+    # Name of function: circle_bound
+    # Me if I was a computer: i'd first calculate the center of the rectangle, and uhmmmmm
+def circle_bound(x: Rectangle) -> Circle:
+
+
 
 # Part 8
 

@@ -247,6 +247,8 @@ def books_by_author(name: str, books: list[Book]) -> list[str]:
     # Name of function: circle_bound
     # Me if I was a computer: i'd first calculate the center of the rectangle, and uhmmmmm
 def circle_bound(x: Rectangle) -> Circle:
+    calculate_x_center = ()
+
 
 
 

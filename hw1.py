@@ -161,7 +161,7 @@ def add_prices(firstprice: Price, secondprice: Price) -> float:
 # DESIGN RECIPE...
     # Purpose: This function takes a parameter of Rectangle and returns the area of the provided rectangle.
     # Input: integer , Output: float
-    # Example Input:  (5, .50) , Output Given the Input : 5.50
+    # Example Input:  (7,7) , Output Given the Input : 49
     # Name of function: rectangle_area
     # Me if I was a computer: take the parameter of rectangle, create a variable area that computes the two points of rectangle class times each other.
 def rectangle_area(x: Rectangle) -> float:
@@ -171,11 +171,12 @@ def rectangle_area(x: Rectangle) -> float:
 
 # Part 6
 # DESIGN RECIPE...
-    # Purpose: This function takes a parameter of Rectangle and returns the area of the provided rectangle.
-    # Input: integer , Output: float
-    # Example Input:  (5, .50) , Output Given the Input : 5.50
-    # Name of function: rectangle_area
-    # Me if I was a computer:
+    # Purpose: This function takes two parameters of type string and list[Book], returning a list of all books written by the author inputted.
+    # Input: str, list[str] , Output: list[str]
+    # Example Input:  ("Andy Weir", Book_List) , Output Given the Input : [["The Martian by Andy Weir"]]
+    # Name of function: books_by_author
+    # Me if I was a computer: first, i'd create a list of books with authors so I have a list to reference from. Then, I'll filter through the list
+    # by each element to see if it matches the inputted author's name. If a result matches, append that element to a new list that contains all books that have that authors' name.
 
 
 # Part 7

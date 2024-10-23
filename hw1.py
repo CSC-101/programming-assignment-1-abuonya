@@ -209,12 +209,11 @@ def books_by_author(name: str, books: list[Book]) -> list[str]:
     book_list = []
     for book in books:
         if book.authors == name:
-            book_list.append(book)
+            book_list.append(book.title)
     else:
-
         return book_list
 # Part 7
-
+def circle_bound(x: rectangle)
 
 # Part 8
 

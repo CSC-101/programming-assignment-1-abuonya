@@ -1,6 +1,9 @@
 from types import NoneType
 import math
 import data
+
+
+
 # Abbreviated representation of an employee.
 class Employee:
     # Initialize a new Employee object.
@@ -135,6 +138,34 @@ class Rectangle:
                 type(other) == Rectangle and
                 self.top_left == other.top_left and
                 self.bottom_right == other.bottom_right)
+
+# Representation of a circle.
+class Circle:
+    # Initialize a new Circle object.
+    # input: center as a Point
+    # input: radius as a float
+    def __init__(self, center: Point, radius: float):
+        self.center = center
+        self.radius = radius
+
+
+    # Provide a developer-friendly string representation of the object.
+    # input: Circle for which a string representation is desired.
+    # output: string representation
+    def __repr__(self) -> str:
+        return 'Circle({}, {})'.format(self.center, self.radius)
+
+
+    # Compare the Circle object with another value to determine equality.
+    # input: Circle against which to compare
+    # input: Another value to compare to the Circle
+    # output: boolean indicating equality
+    def __eq__(self, other) -> bool:
+        return (other is self or
+                type(other) == Circle and
+                self.center == other.center and
+                math.isclose(self.radius, other.radius))
+
 # Write your functions for each part in the space below.
 
 
@@ -244,10 +275,19 @@ def books_by_author(name: str, books: list[Book]) -> list[str]:
     # Input: float Output: float
     # Example Input: , Output Given the Input :
     # Name of function: circle_bound
-    # Me if I was a computer: i'd first calculate the center of the rectangle, and uhmmmmm
-# def circle_bound(points: Rectangle) -> Circle:
-    # calculate_x_center = points.top_left[0] - points.bottom_right[0] / 2 # find coordinate "x" for center point of rectangle
-   #  calculate_y_center = points.top_left[1] - points.top_left[1] / 2 # find coordinate "y" for center point of rectangle
+    # Me if I was a computer: i'd first calculate the center of the rectangle, find the radius of the circle using a^2+b^2 = c^2 (making a triangle) using rectangle points.
+    #
+def circle_bound(points: Rectangle) -> Circle:
+    calculate_x_center = points.top_left[0] - points.bottom_right[0] / 2 # find coordinate "x" for center point of rectangle
+    calculate_y_center = points.top_left[0] - points.bottom_right[0] / 2 # find coordinate "y" for center point of rectangle
+    # compile x and y into one coordinate
+    center_coordinates = (calculate_x_center, calculate_y_center)
+
+    # find the radius of the circle (it is the same as the length from the center of the rectangle to one of its corners.)
+    circle_radius = math.sqrt((calculate_x_center**2) + (calculate_y_center**2))
+    circle_coordinates = Circle(center_coordinates, circle_radius)
+    print(circle_coordinates)
+    return circle_coordinates
 
 
 # Part 8

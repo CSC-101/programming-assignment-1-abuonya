@@ -1,6 +1,4 @@
 from importlib.metadata import Lookup
-
-import data
 import hw1
 import unittest
 
@@ -231,10 +229,10 @@ class TestCases(unittest.TestCase):
 
     # Part 7
     def test_circle_bound1(self):
-        input = Rectangle(7,7)
+        input = Rectangle([7],[7])
         result = hw1.circle_bound(input)
-
-
+        expected =
+        self.assertEqual(expected, result)
 
     # Part 8
     def test_below_pay_average(self):

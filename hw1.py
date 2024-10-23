@@ -205,11 +205,13 @@ def rectangle_area(x: Rectangle) -> float:
     # Me if I was a computer: first, i'd create a list of books with authors so I have a list to reference from. Then, I'll filter through the list
     # by each element to see if it matches the inputted author's name. If a result matches, append that element to a new list that contains all books that have that authors' name.
 
-def books_by_author(name: Book, books: list[Book]) -> list[str]:
+def books_by_author(name: str, books: list[Book]) -> list[str]:
     book_list = []
     for x in books:
-        if x == name.author:
+        if name.authors == name:
             book_list.append(x)
+    else:
+        return book_list
 # Part 7
 
 

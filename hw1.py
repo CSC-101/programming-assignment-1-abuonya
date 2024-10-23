@@ -96,12 +96,13 @@ def ascending_pairs(input: list[list[int]]) ->  list[list[int]]:
     # Input: integer , Output: float
     # Example Input:  (5, .50) , Output Given the Input : 5.50
     # Name of function: add_prices
-    # Me if I was a computer:
-#TWO PARAMETERS EACH OF TYPE PRICE?? ADD TWO DIFFERENT PRICES TOGETHER ITS CALLED ADD PRICES NOT ADD DOLLARS AND CENTS
-
+    # Me if I was a computer: take two inputs for price (dollars and cents), find the costs for each price in dollars, then the sum for each price in their cents.
+    #
 
 def add_prices(firstprice: Price, secondprice: Price) -> float:
-    total_price = firstprice + secondprice
+    total_dollars = firstprice.dollars + secondprice.dollars
+    total_cents = firstprice.cents + secondprice.cents
+    total_price = total_dollars + total_cents
     print(total_price)
     return total_price
 

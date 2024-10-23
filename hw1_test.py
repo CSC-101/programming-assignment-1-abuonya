@@ -233,7 +233,7 @@ class TestCases(unittest.TestCase):
     def test_circle_bound1(self):
         input = Rectangle(7,7)
         result = hw1.circle_bound(input)
-        expected =
+
 
 
     # Part 8

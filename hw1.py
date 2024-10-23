@@ -2,6 +2,33 @@ from types import NoneType
 
 import data
 
+# Representation of a price in integer dollars and cents.
+class Price:
+    # Initialize a new Price object.
+    # input: dollars as an integer
+    # input: cents as an integer
+    def __init__(self, dollars: int, cents: int):
+        self.dollars = dollars
+        self.cents = cents
+
+
+    # Provide a developer-friendly string representation of the object.
+    # input: Price for which a string representation is desired.
+    # output: string representation
+    def __repr__(self) -> str:
+        return 'Price({}, {})'.format(self.dollars, self.cents)
+
+
+    # Compare the Price object with another value to determine equality.
+    # input: Price against which to compare
+    # input: Another value to compare to the Price
+    # output: boolean indicating equality
+    def __eq__(self, other) -> bool:
+        return (other is self or
+                type(other) == Price and
+                self.dollars == other.dollars and
+                self.cents == other.cents)
+
 # Write your functions for each part in the space below.
 
 
@@ -63,15 +90,21 @@ def ascending_pairs(input: list[list[int]]) ->  list[list[int]]:
         print(ascending_list)
         return ascending_list
 
-
-
-
-
-
-
-
-
 # Part 4
+# DESIGN RECIPE...
+    # Purpose: This function computes and returns the sum of the input prices as a new Price object, but cents is not above 99.
+    # Input: integer , Output: float
+    # Example Input:  (5, .50) , Output Given the Input : 5.50
+    # Name of function: add_prices
+    # Me if I was a computer:
+#TWO PARAMETERS EACH OF TYPE PRICE?? ADD TWO DIFFERENT PRICES TOGETHER ITS CALLED ADD PRICES NOT ADD DOLLARS AND CENTS
+
+
+def add_prices(firstprice: Price, secondprice: Price) -> float:
+    total_price = firstprice + secondprice
+    print(total_price)
+    return total_price
+
 
 
 # Part 5

@@ -16,7 +16,7 @@ class TestCases(unittest.TestCase):
         self.assertEqual(expected, result)
 
     def test_vowel_count2(self):
-        input = "omnitrix"
+        input = "OMNITRIX"
         result = hw1.vowel_count(input)
         expected = 3
         self.assertEqual(expected, result)

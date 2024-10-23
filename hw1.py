@@ -2,6 +2,33 @@ from types import NoneType
 
 import data
 
+# Representation of a book.
+class Book:
+    # Initialize a new Book object.
+    # input: the book's authors as a list of strings
+    # input: the book's title as a string
+    def __init__(self, authors: list[str], title: str):
+        self.authors = authors
+        self.title = title
+
+
+    # Provide a developer-friendly string representation of the object.
+    # input: Book for which a string representation is desired.
+    # output: string representation
+    def __repr__(self):
+        return "Book({}, '{}')".format(self.authors, self.title)
+
+
+    # Compare the Book object with another value to determine equality.
+    # input: Book against which to compare
+    # input: Another value to compare to the Book
+    # output: boolean indicating equality
+    def __eq__(self, other):
+        return (self is other or
+                type(other) == Book and
+                self.authors == other.authors and
+                self.title == other.title)
+
 # Representation of a two-dimensional point.
 class Point:
     # Initialize a new Point object.
@@ -178,7 +205,11 @@ def rectangle_area(x: Rectangle) -> float:
     # Me if I was a computer: first, i'd create a list of books with authors so I have a list to reference from. Then, I'll filter through the list
     # by each element to see if it matches the inputted author's name. If a result matches, append that element to a new list that contains all books that have that authors' name.
 
-
+def books_by_author(name: Book, books: list[Book]) -> list[str]:
+    book_list = []
+    for x in books:
+        if x == name.author:
+            book_list.append(x)
 # Part 7
 
 

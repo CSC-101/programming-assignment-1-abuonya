@@ -4,6 +4,33 @@ import data
 import hw1
 import unittest
 
+# Abbreviated representation of an employee.
+class Employee:
+    # Initialize a new Employee object.
+    # input: the employee's name as a string
+    # input: the employee's pay rate as an integer (for simplicity)
+    def __init__(self, name: str, pay_rate: int):
+        self.name = name
+        self.pay_rate = pay_rate
+
+
+    # Provide a developer-friendly string representation of the object.
+    # input: Employee for which a string representation is desired.
+    # output: string representation
+    def __repr__(self):
+        return "Employee('{}', {})".format(self.name, self.pay_rate)
+
+
+    # Compare the Employee object with another value to determine equality.
+    # input: Employee against which to compare
+    # input: Another value to compare to the Employee
+    # output: boolean indicating equality
+    def __eq__(self, other):
+        return (other is self or
+                type(other) == Employee and
+                self.name == other.name and
+                self.pay_rate == other.pay_rate)
+
 # Representation of a book.
 class Book:
     # Initialize a new Book object.

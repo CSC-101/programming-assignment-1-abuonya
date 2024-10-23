@@ -246,12 +246,18 @@ def books_by_author(name: str, books: list[Book]) -> list[str]:
     # Example Input: , Output Given the Input :
     # Name of function: circle_bound
     # Me if I was a computer: i'd first calculate the center of the rectangle, and uhmmmmm
-def circle_bound(x: Rectangle) -> Circle:
-    calculate_x_center = ()
-
-
+def circle_bound(points: Rectangle) -> Circle:
+    calculate_x_center = points.top_left[0] - points.bottom_right[0] / 2 # find coordinate "x" for center point of rectangle
+    calculate_y_center = points.top_left[1] - points.top_left[1] / 2 # find coordinate "y" for center point of rectangle
 
 
 # Part 8
-
+# DESIGN RECIPE...
+    # Purpose: This function takes one parameter of type list[Employee] and returns a llist of the names of employees being paid less than average.
+    # Input: list[str] Output: list[str]
+    # Example Input: ["Sarah", "Jackson", "Conrad", "Jericho"], Output Given the Input : ["Sarah", "Jericho"]
+    # Name of function: below_pay_average
+    # Me if I was a computer: first, i'd get a list of all the employees. Go through the list to find all their pay, then take the average of all those numbers.
+    # Then, I'd take the same list of employees and filter out if an employee's pay is less than the average pay, appending that employee's name to a new list.
+def below_pay_average(employee: list[Employee]):
 

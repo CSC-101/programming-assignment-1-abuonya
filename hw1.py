@@ -2,6 +2,33 @@ from types import NoneType
 
 import data
 
+# Representation of a two-dimensional point.
+class Point:
+    # Initialize a new Point object.
+    # input: x-coordinate as a float
+    # input: y-coordinate as a float
+    def __init__(self, x: float, y: float):
+        self.x = x
+        self.y = y
+
+
+    # Provide a developer-friendly string representation of the object.
+    # input: Point for which a string representation is desired.
+    # output: string representation
+    def __repr__(self) -> str:
+        return 'Point({}, {})'.format(self.x, self.y)
+
+
+    # Compare the Point object with another value to determine equality.
+    # input: Point against which to compare
+    # input: Another value to compare to the Point
+    # output: boolean indicating equality
+    def __eq__(self, other) -> bool:
+        return (other is self or
+                type(other) == Point and
+                math.isclose(self.x, other.x) and
+                math.isclose(self.y, other.y))
+
 # Representation of a price in integer dollars and cents.
 class Price:
     # Initialize a new Price object.
@@ -29,6 +56,32 @@ class Price:
                 self.dollars == other.dollars and
                 self.cents == other.cents)
 
+# Representation of an axis-aligned rectangle.
+class Rectangle:
+    # Initialize a new Rectangle object.
+    # input: top-left corner as a Point
+    # input: bottom-right corner as a Point
+    def __init__(self, top_left: Point, bottom_right: Point):
+        self.top_left = top_left
+        self.bottom_right = bottom_right
+
+
+    # Provide a developer-friendly string representation of the object.
+    # input: Rectangle for which a string representation is desired.
+    # output: string representation
+    def __repr__(self) -> str:
+        return 'Rectangle({}, {})'.format(self.top_left, self.bottom_right)
+
+
+    # Compare the Rectangle object with another value to determine equality.
+    # input: Rectangle against which to compare
+    # input: Another value to compare to the Rectangle
+    # output: boolean indicating equality
+    def __eq__(self, other) -> bool:
+        return (other is self or
+                type(other) == Rectangle and
+                self.top_left == other.top_left and
+                self.bottom_right == other.bottom_right)
 # Write your functions for each part in the space below.
 
 
@@ -105,9 +158,24 @@ def add_prices(firstprice: Price, secondprice: Price) -> float:
     return combinedprices
 
 # Part 5
-
+# DESIGN RECIPE...
+    # Purpose: This function takes a parameter of Rectangle and returns the area of the provided rectangle.
+    # Input: integer , Output: float
+    # Example Input:  (5, .50) , Output Given the Input : 5.50
+    # Name of function: rectangle_area
+    # Me if I was a computer: take the parameter of rectangle, create a variable area that computes the two points of rectangle class times each other.
+def rectangle_area(x: Rectangle) -> float:
+    area = x.top_left * x.bottom_right
+    print(area)
+    return area
 
 # Part 6
+# DESIGN RECIPE...
+    # Purpose: This function takes a parameter of Rectangle and returns the area of the provided rectangle.
+    # Input: integer , Output: float
+    # Example Input:  (5, .50) , Output Given the Input : 5.50
+    # Name of function: rectangle_area
+    # Me if I was a computer:
 
 
 # Part 7

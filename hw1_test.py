@@ -247,6 +247,17 @@ class TestCases(unittest.TestCase):
         expected = ["Jericho", "JoAnne"]
         self.assertEqual(expected, result )
 
+    def test_below_pay_average2(self):
+        employee1 = Employee("Jericho", 0)
+        employee2 = Employee("John", 700)
+        employee3 = Employee("Charles", 700)
+        employee4 = Employee("Charles Jr.", 100000)
+        employee5 = Employee("JoAnne", 0)
+        list_of_employees = [employee1, employee2, employee3, employee4, employee5]
+        result = hw1.below_pay_average(list_of_employees)
+        expected = ["Jericho", "John",  "Charles", "JoAnne"]
+        self.assertEqual(expected, result )
+
 
 if __name__ == '__main__':
     unittest.main()

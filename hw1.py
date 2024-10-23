@@ -258,7 +258,6 @@ def books_by_author(name: str, books: list[Book]) -> list[str]:
     # Name of function: below_pay_average
     # Me if I was a computer: first, i'd get a list of all the employees. Go through the list to find all their pay, then take the average of all those numbers.
     # Then, I'd take the same list of employees and filter out if an employee's pay is less than the average pay, appending that employee's name to a new list.
-
 def below_pay_average(allemployees: list[Employee]) -> list[str]:
     #first find total pay...
     underpaid_list = []
@@ -269,8 +268,6 @@ def below_pay_average(allemployees: list[Employee]) -> list[str]:
         count += 1
     # compute average pay...
     average_pay = total_employee_pay / count
-    print(average_pay)
-
     # create list of employees that are underpaid
     for employee in allemployees:
         if employee.pay_rate < average_pay:

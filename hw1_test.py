@@ -35,7 +35,17 @@ class TestCases(unittest.TestCase):
         self.assertEqual(expected, result)
 
     # Part 3
+    def test_ascending_pairs1(self):
+        input = [[1,23,4], [6,5], [32, 29]]
+        result = hw1.ascending_pairs(input)
+        expected = [[5,6], [29, 32]]
+        self.assertEqual(expected, result)
 
+    def test_ascending_pairs2(self):
+        input = [[-4, -7], [6,5,34,5], [32,-9]]
+        result = hw1.ascending_pairs(input)
+        expected = [[-7,-4], [-9, 32]]
+        self.assertEqual(expected, result)
 
     # Part 4
 

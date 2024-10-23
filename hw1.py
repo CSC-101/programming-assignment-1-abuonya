@@ -52,19 +52,18 @@ def short_lists(input: list[list[int]]) -> list[list[int]]:
     # Me if I was a computer: take list, use a list comprehension to filter the length of each nested list, and if its length == 2, append that list into a new list.
     # Then, filter through the new list, evaluate if the index[0] of a nested list is less/greater than index[1] of that same nested list.
     # Then, change the individual index values of the list to keep the elements in the same order as the resulting list from before.
-def another_short_lists(input: list[list[int]]) -> list[list[int]]:
-    newList = []
-    for x in input:
-        if len(x) == 2:
-            newList.append(x)
-    else:
-        print(newList)
-        return newList
 
 def ascending_pairs(input: list[list[int]]) ->  list[list[int]]:
+    ascending_list = []
     for x in input:
-        if x[0] > x[1]:
-            helppdfmsdkfmasklf
+        if len(x) == 2:
+            if x[0] > x[1]:
+                ascending_list.append([x[1], x[0]])
+    else:
+        print(ascending_list)
+        return ascending_list
+
+
 
 
 

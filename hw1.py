@@ -208,7 +208,7 @@ def rectangle_area(x: Rectangle) -> float:
 def books_by_author(name: str, books: list[Book]) -> list[str]:
     book_list = []
     for x in books:
-        if name.authors == name:
+        if x.authors == name:
             book_list.append(x)
     else:
         return book_list

@@ -184,10 +184,9 @@ class TestCases(unittest.TestCase):
 
     # Part 6
     def test_books_by_author1(self):
-        book1 = (Book(["Andy Weir"],"The Martian"))
-        book2 = (Book(["Toni Morrison"],"The Bluest Eye"))
+        lists_of_books = [[(Book("Andy Weir","The Martian"))], [(Book("Toni Morrison","The Bluest Eye"))]]
         input = "Andy Weir"
-        result = hw1.books_by_author(input, book1)
+        result = hw1.books_by_author(input, [lists_of_books])
         expected = [("Andy Weir", "The Martian")]
         self.assertEqual(expected, result)
 

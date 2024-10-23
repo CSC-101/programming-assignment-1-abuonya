@@ -79,7 +79,6 @@ def short_lists(input: list[list[int]]) -> list[list[int]]:
     # Me if I was a computer: take list, use a list comprehension to filter the length of each nested list, and if its length == 2, append that list into a new list.
     # Then, filter through the new list, evaluate if the index[0] of a nested list is less/greater than index[1] of that same nested list.
     # Then, change the individual index values of the list to keep the elements in the same order as the resulting list from before.
-
 def ascending_pairs(input: list[list[int]]) ->  list[list[int]]:
     ascending_list = []
     for x in input:
@@ -96,17 +95,14 @@ def ascending_pairs(input: list[list[int]]) ->  list[list[int]]:
     # Input: integer , Output: float
     # Example Input:  (5, .50) , Output Given the Input : 5.50
     # Name of function: add_prices
-    # Me if I was a computer: take two inputs for price (dollars and cents), find the costs for each price in dollars, then the sum for each price in their cents.
-    #
-
+    # Me if I was a computer: take two inputs for price (dollars and cents), find the individual total costs for each price (dollars and cents combined),
+    # divide by / 100 to get a float value and convert back to dollars and cents, then add the total individual costs to get the sum of both prices.
 def add_prices(firstprice: Price, secondprice: Price) -> float:
-    total_dollars = firstprice.dollars + secondprice.dollars
-    total_cents = firstprice.cents + secondprice.cents
-    total_price = total_dollars + total_cents
-    print(total_price)
-    return total_price
-
-
+    total_firstprice = firstprice.dollars + firstprice.cents / 100
+    total_secondprice = secondprice.dollars + secondprice.cents / 100
+    combinedprices = total_firstprice + total_secondprice
+    print(combinedprices)
+    return combinedprices
 
 # Part 5
 

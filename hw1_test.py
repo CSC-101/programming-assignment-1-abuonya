@@ -106,6 +106,11 @@ class TestCases(unittest.TestCase):
         expected = Circle((3.5, 3.5), 4.9497)
         self.assertEqual(expected, result)
 
+    def test_circle_bound2(self):
+        input = Rectangle([65],[90])
+        result = hw1.circle_bound(input)
+        expected = Circle((20.0, 20.0), 28.2843)
+        self.assertEqual(expected, result)
     # Part 8
     def test_below_pay_average(self):
         employee1 = Employee("Jericho", 425)

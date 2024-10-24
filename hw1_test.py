@@ -103,7 +103,7 @@ class TestCases(unittest.TestCase):
     def test_circle_bound1(self):
         input = Rectangle([7],[7])
         result = hw1.circle_bound(input)
-        expected = ((3.5, 3.5), 4.9497)
+        expected = Circle((3.5, 3.5), 4.9497)
         self.assertEqual(expected, result)
 
     # Part 8
